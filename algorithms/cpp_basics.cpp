@@ -22,7 +22,7 @@ using namespace std;
 int sumTwoNumbers(int a, int b) {
     // TODO: Implement this function
     // Example: sumTwoNumbers(3, 5) should return 8
-    return 0;
+    return a + b;
 }
 
 // PROBLEM 2: Find Maximum
@@ -30,7 +30,16 @@ int sumTwoNumbers(int a, int b) {
 int findMaximum(vector<int> numbers) {
     // TODO: Implement this function
     // Example: findMaximum({1, 5, 3, 9, 2}) should return 9
-    return 0;
+    int n = numbers.size() - 1;
+    int max =  numbers[0];
+    for (int i = 0; i < n; i++) {
+        if (numbers[i] < numbers[i + 1]) {
+            max = numbers[i + 1];
+            i++;
+        }
+        else i++;
+    }
+    return max;
 }
 
 // PROBLEM 3: Count Even Numbers
@@ -38,7 +47,8 @@ int findMaximum(vector<int> numbers) {
 int countEven(vector<int> numbers) {
     // TODO: Implement this function
     // Example: countEven({1, 2, 3, 4, 5, 6}) should return 3
-    return 0;
+    int n = numbers.size()/2;
+    return n;
 }
 
 // PROBLEM 4: Reverse a String
@@ -46,7 +56,11 @@ int countEven(vector<int> numbers) {
 string reverseString(string s) {
     // TODO: Implement this function
     // Example: reverseString("hello") should return "olleh"
-    return "";
+    string reversed = "";
+    for (int i = s.length() - 1; i >= 0; i--) {
+        reversed += s[i];
+    }
+    return reversed;
 }
 
 // PROBLEM 5: Check if Palindrome
@@ -55,7 +69,15 @@ bool isPalindrome(string s) {
     // TODO: Implement this function
     // Example: isPalindrome("racecar") should return true
     // Example: isPalindrome("hello") should return false
-    return false;
+    int mid = s.length()/2;
+    for (int i = 0; i < mid; i++) {
+        for (int j = s.length() - 1; j >= mid; j--) {
+            if (s[i] != s[j]) {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 // PROBLEM 6: Factorial
@@ -63,7 +85,11 @@ bool isPalindrome(string s) {
 long long factorial(int n) {
     // TODO: Implement this function
     // Example: factorial(5) should return 120
-    return 0;
+    long long factorial = 1;
+    for (int i = 1; i <= n; i++) {
+        factorial *= i;
+    }
+    return factorial;
 }
 
 // PROBLEM 7: Fibonacci Sequence
@@ -72,7 +98,12 @@ int fibonacci(int n) {
     // TODO: Implement this function
     // Fibonacci: 0, 1, 1, 2, 3, 5, 8, 13, 21, ...
     // Example: fibonacci(7) should return 13
-    return 0;
+    function fibonacci(n) {
+        if n= 0 then return 0;
+        if n= 1 then return 1; 
+        else return fibonacci(n-1) + fibonacci(n-2);
+    }
+    return fibonacci(n);
 }
 
 // PROBLEM 8: Find Prime Numbers
@@ -111,4 +142,5 @@ int main() {
     
     return 0;
 }
+
 
